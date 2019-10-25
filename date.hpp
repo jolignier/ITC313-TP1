@@ -6,21 +6,17 @@
 
 class Date {
 private:
-  int m_mounth;
+  int m_month;
   int m_day;
   int m_year;
 
 
 public:
-  Date (int day, int mounth, int year);
+  Date (int day, int month, int year);
 
-  int getMounth();
+  int getMonth();
   int getDay();
   int getYear();
-  Date nextDay();
-  std::string toString();
-
-  // virtual ~Date ();
 };
 
 #endif
