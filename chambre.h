@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string>
+#include <type_chambre.h>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ class Chambre {
         string m_type;
         double m_prix;
     public:
-        Chambre(int id, string type, double prix);
+        Chambre(int id, type_chambre type, double prix);
         int getId();
         string getType();
         double getPrix();

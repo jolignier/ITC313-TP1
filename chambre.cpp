@@ -8,7 +8,7 @@
 
 #include "chambre.h"
 
-Chambre::Chambre(int id, string type, double prix)  {
+Chambre::Chambre(int id, type_chambre type, double prix)  {
     this->m_id = id;
     this->m_type = type;
     this->m_prix = prix;
@@ -19,7 +19,7 @@ int Chambre::getId() {
 }
 
 
-string Chambre::getType() {
+type_chambre Chambre::getType() {
     return m_type;
 }
 
@@ -28,7 +28,7 @@ double Chambre::getPrix() {
     return m_prix;
 }
 
-void Chambre::modifierChambre(int id, string type, double prix) {
+void Chambre::modifierChambre(int id, type_chambre type, double prix) {
     this->m_id = id;
     this->m_type = type;
     this->m_prix = prix;
