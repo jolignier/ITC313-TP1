@@ -2,7 +2,7 @@
 #-Wall -W
 EXT = cpp
 CXX = g++
-EXEC = hotel
+EXEC = main
 
 CXXFLAGS = -std=c++11
 LDFLAGS =

@@ -2,7 +2,7 @@
 //  reservation.h
 //  ITC313-TP1
 //
-//  Created by Jonathan Lgnier on 25/10/2019.
+//  Created by Jonathan Lignier on 25/10/2019.
 //
 //
 
@@ -11,13 +11,14 @@
 
 #include <stdio.h>
 #include "date.hpp"
+#include "chambre.h"
 
 class Reservation {
 
     private:
         int m_id;
         Date m_dateDeb;
-        Date m_datefin;
+        Date m_dateFin;
         int m_idHotel;
         int m_idChambre;
         int m_idClient;

@@ -2,13 +2,13 @@
 //  reservation.cpp
 //  ITC313-TP1
 //
-//  Created by Jonathan Lgnier on 25/10/2019.
+//  Created by Jonathan Lignier on 25/10/2019.
 //
 //
 
 #include "reservation.h"
 
-Reservation::Reservation(int id, dateDeb, Date dateFin, int idHotel, int idChambre, int idClient, double montantTotal)  {
+Reservation::Reservation(int id, Date dateDeb, Date dateFin, int idHotel, int idChambre, int idClient, double montantTotal)  {
     this->m_id = id;
     this->m_dateDeb = dateDeb;
     this->m_dateFin = dateFin;
@@ -48,7 +48,7 @@ double Reservation::getMontantTotal() {
 
 void Reservation::setDates(Date dateDeb, Date dateFin) {
     this->m_dateDeb = dateDeb;
-    this->m_datefin = dateFin;
+    this->m_dateFin = dateFin;
 }
 
 void Reservation::setNumeroChambre(int num) {
@@ -56,7 +56,7 @@ void Reservation::setNumeroChambre(int num) {
 }
 // La réduction est un pourcentage entre 0 et 1
 double Reservation::calculMontant(Chambre c, double reduction) {
-    int nbNuits = m_dateFin - m_dateDeb;
-    double prix = nbNuits * c->getPrix();
+    int nbNuits = m_dateDeb.getNbDays(m_dateFin);
+    double prix = nbNuits * c.getPrix();
     this->m_montantTotal = prix - reduction*prix ;
 }

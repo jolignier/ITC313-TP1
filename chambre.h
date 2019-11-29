@@ -11,20 +11,21 @@
 
 #include <stdio.h>
 #include <string>
+#include "type_chambre.h"
 
 using namespace std;
 
 class Chambre {
     private:
         int m_id;
-        string m_type;
+        type_chambre m_type;
         double m_prix;
     public:
-        Chambre(int id, string type, double prix);
+        Chambre(int id, type_chambre type, double prix);
         int getId();
-        string getType();
+        type_chambre getType();
         double getPrix();
-        void modifierChambre(int id, string type, double prix);
+        void modifierChambre(int id, type_chambre type, double prix);
     protected:
 
 };
