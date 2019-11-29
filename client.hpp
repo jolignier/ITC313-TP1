@@ -31,8 +31,8 @@ public:
     void setSurname(std::string);
     void setName(std::string);
     void setFidelity(int);
-
     void addFidelity();
+    void afficherInfos();
 };
 
 

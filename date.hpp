@@ -10,7 +10,6 @@ class Date {
         int m_day;
         int m_year;
 
-        int getDaysInMonth(int m, int year);
         bool bissextile(int year);
     public:
         Date();
@@ -21,6 +20,7 @@ class Date {
         int getYear();
         bool isEqual(Date d);
         bool isAnterior(Date d);
+        int getDaysInMonth(int m, int year);
         int getNbDays(Date d2);
 
 };

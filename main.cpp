@@ -19,51 +19,56 @@
 
 using namespace std;
 
+bool checkDate(int day, int month, int year) {
+    bool res = true;
+    Date date;
+    if (month > 12) {
+        res = false;
+    } else {
+        if (day > date.getDaysInMonth(month,year))
+            res = false;
+    }
+
+    return res;
+}
+
 int main() {
 
     // Création des chambres
-    array<Chambre, 10> chambres;
+    vector<Chambre> chambres = {
+        Chambre (1, SINGLE, 100),
+        Chambre (2, SINGLE, 100),
+        Chambre (3, SINGLE, 100),
 
-    Chambre c1(1, SINGLE, 100);
-    Chambre c2(2, SINGLE, 100);
-    Chambre c3(3, SINGLE, 100);
+        Chambre (4, DOUBLE, 125),
+        Chambre (5, DOUBLE, 125),
+        Chambre (6, DOUBLE, 125),
+        Chambre (7, DOUBLE, 125),
+        Chambre (8, DOUBLE, 125),
 
-    Chambre c4(4, DOUBLE, 125);
-    Chambre c5(5, DOUBLE, 125);
-    Chambre c6(6, DOUBLE, 125);
-    Chambre c7(7, DOUBLE, 125);
-    Chambre c8(8, DOUBLE, 125);
-
-    Chambre c9(9, SUITE, 210);
-    Chambre c10(10, SUITE, 210);
-
-    // Remplissage du tableau de chambres
-    chambres.fill(c1);
-    chambres.fill(c2);
-    chambres.fill(c3);
-    chambres.fill(c4);
-    chambres.fill(c5);
-    chambres.fill(c6);
-    chambres.fill(c7);
-    chambres.fill(c8);
-    chambres.fill(c9);
-    chambres.fill(c10);
+        Chambre (9, SUITE, 210),
+        Chambre (10, SUITE, 210)
+    };
 
 
-    array<Client, 11> clients;
 
-    clients.fill(Client(1, "Alain", "TERIEUR"));
-    clients.fill(Client(2, "Barack", "ARFITE"));
-    clients.fill(Client(3, "Cecile", "ANCIEUX"));
-    clients.fill(Client(4, "Douglas", "O'CHOCOLA"));
-    clients.fill(Client(5, "Eddy", "MALOU"));
-    clients.fill(Client(6, "Firmin", "PEUTAGEUL"));
-    clients.fill(Client(7, "Gerard", "MENVUSSA"));
-    clients.fill(Client(8, "Abdel", "OBOISDORMAN"));
-    clients.fill(Client(9, "Jean", "REPRENDRAIBIENUNEUTITPEUOUIMERCI"));
-    clients.fill(Client(10, "Justine", "PTITEGOUTE"));
-    clients.fill(Client(11, "Mellissa", "PTITEGOUTE"));
-    clients.fill(Client(12, "Corine", "PTITEGOUTE"));
+
+
+    vector<Client> clients = {
+        Client(1, "Alain", "TERIEUR"),
+        Client(2, "Barack", "ARFITE"),
+        Client(3, "Cecile", "ANCIEUX"),
+        Client(4, "Douglas", "O'CHOCOLA"),
+        Client(5, "Eddy", "MALOU"),
+        Client(6, "Firmin", "PEUTAGEUL"),
+        Client(7, "Gerard", "MENVUSSA"),
+        Client(8, "Abdel", "OBOISDORMAN"),
+        Client(9, "Jean", "REPRENDRAIBIENUNEUTITPEUOUIMERCI"),
+        Client(10, "Justine", "PTITEGOUTE"),
+        Client(11, "Mellissa", "PTITEGOUTE"),
+        Client(12, "Corine", "PTITEGOUTE")
+    };
+
 
 
     return 0;

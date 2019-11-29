@@ -42,3 +42,7 @@ void Client::setFidelity(int fidelity) {
 void Client::addFidelity() {
   this->m_fidelity++;
 }
+
+void Client::afficherInfos() {
+    std::cout << "Client n°"<< m_unique_id << " : " << m_surname << " " << m_name << std::endl;
+}
