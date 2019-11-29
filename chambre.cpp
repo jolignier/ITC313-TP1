@@ -9,6 +9,8 @@
 #include "chambre.h"
 #include "iostream"
 
+Chambre::Chambre(){}
+
 Chambre::Chambre(int id, type_chambre type, double prix)  {
     this->m_id = id;
     this->m_type = type;

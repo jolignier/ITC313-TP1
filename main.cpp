@@ -50,6 +50,21 @@ int main() {
     chambres.fill(c10);
 
 
+    array<Client, 11> clients;
+
+    clients.fill(Client(1, "Alain", "TERIEUR"));
+    clients.fill(Client(2, "Barack", "ARFITE"));
+    clients.fill(Client(3, "Cecile", "ANCIEUX"));
+    clients.fill(Client(4, "Douglas", "O'CHOCOLA"));
+    clients.fill(Client(5, "Eddy", "MALOU"));
+    clients.fill(Client(6, "Firmin", "PEUTAGEUL"));
+    clients.fill(Client(7, "Gerard", "MENVUSSA"));
+    clients.fill(Client(8, "Abdel", "OBOISDORMAN"));
+    clients.fill(Client(9, "Jean", "REPRENDRAIBIENUNEUTITPEUOUIMERCI"));
+    clients.fill(Client(10, "Justine", "PTITEGOUTE"));
+    clients.fill(Client(11, "Mellissa", "PTITEGOUTE"));
+    clients.fill(Client(12, "Corine", "PTITEGOUTE"));
+
 
     return 0;
 }

@@ -14,12 +14,13 @@
 
 class Client {
 private:
-    const int m_unique_id;
+    int m_unique_id;
     std::string m_surname;
     std::string m_name;
     int m_fidelity;
 
 public:
+    Client();
     Client(int id, std::string surname, std::string name);
 
     int getID() const;

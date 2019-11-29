@@ -8,7 +8,10 @@
 
 #include "client.hpp"
 
-Client::Client(int id, std::string surname, std::string name) : m_unique_id(id) {
+Client::Client(){}
+
+Client::Client(int id, std::string surname, std::string name){
+  this->m_unique_id = id;
   this->m_surname = surname;
   this->m_name = name;
 }

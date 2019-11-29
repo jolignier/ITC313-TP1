@@ -21,6 +21,7 @@ class Chambre {
         type_chambre m_type;
         double m_prix;
     public:
+        Chambre();
         Chambre(int id, type_chambre type, double prix);
         int getId();
         type_chambre getType();

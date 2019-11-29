@@ -9,7 +9,7 @@
 #define TYPE_CHAMBRE
 
 enum type_chambre {
-    SIMPLE,
+    SINGLE,
     DOUBLE,
     SUITE
 };
