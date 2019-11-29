@@ -14,12 +14,15 @@ class Date {
         bool bissextile(int year);
     public:
         Date();
-        Date (int day, int month, int year);
+        Date(int day, int month, int year);
 
         int getMonth();
         int getDay();
         int getYear();
+        bool isEqual(Date d);
+        bool isAnterior(Date d);
         int getNbDays(Date d2);
+
 };
 
 #endif

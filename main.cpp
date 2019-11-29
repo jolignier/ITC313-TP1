@@ -32,8 +32,7 @@ int main() {
     Date deb(25,12,2019);
     Date fin(03,03,2020);
     Date fin2(25,12,2020);
-
-    cout << "Il y a " << fin.getNbDays(deb) <<" jours d'écart entre les deux dates" << endl;
-    cout << "Il y a " << fin2.getNbDays(deb) <<" jours d'écart entre les deux dates" << endl;
+    cout << "Il y a " << deb.getNbDays(fin) <<" jours d'écart entre les deux dates" << endl;
+    cout << "Il y a " << deb.getNbDays(fin2) <<" jours d'écart entre les deux dates" << endl;
     return 0;
 }

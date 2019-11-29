@@ -6,7 +6,7 @@ Date::Date(){
 
 }
 
-Date::Date (int day, int month, int year) {
+Date::Date(int day, int month, int year) {
 	m_month = month;
 	m_day = day;
 	m_year = year;
@@ -63,26 +63,65 @@ bool Date::bissextile(int year){
 	}
 }
 
-int Date::getNbDays(Date d2) {
-    // Supposing that d2 is the oldest date
+bool Date::isEqual(Date d) {
+	bool res = true;
+	if (d.getDay() != m_day) {
+		res = false;
+	}
+	if (d.getMonth() != m_month) {
+		res = false;
+	}
+	if (d.getYear() != m_year) {
+		res = false;
+	}
+	return res;
+}
+bool Date::isAnterior(Date d) {
+	bool res = false;
+	if (m_year < d.getYear()) {
+		res = true;
+	} else {
+		if (m_year == d.getYear()){
+			if (m_month < d.getMonth()) {
+				res = true;
+			} else {
+				if (m_month == d.getMonth()) {
+					if (m_day < d.getDay()) {
+						res = true;
+					} else {
+						res = false;
+					}
 
-	int nbDays = d2.getDay()- m_day;
-
-	int currentMonth = d2.getMonth();
-	int currentYear = d2.getYear();
-
-    while (!(currentMonth == m_month && currentYear == m_year)) {
-        std::cout << nbDays << std::endl;
-		nbDays += getDaysInMonth(currentMonth, currentYear);
-
-        if (currentMonth == 12) {
-			currentMonth = 1;
-			currentYear++;
-
-		} else {
-			currentMonth++;
+				}
+			}
 		}
 	}
+	return res;
+}
 
+int Date::getNbDays(Date d2) {
+	int nbDays = 0;
+    if (!d2.isAnterior(*this)) {
+
+		int currentDay = m_day ;
+		int currentMonth = m_month ;
+		int currentYear = m_year ;
+		Date date = Date(currentDay, currentMonth, currentYear);
+	    while ( !date.isEqual(d2) ) {
+			nbDays ++;
+			currentDay++;
+			if (currentDay > getDaysInMonth(currentMonth, currentYear) ) {
+				currentDay = 1;
+				currentMonth++;
+			}
+			if (currentMonth > 12) {
+				currentMonth = 1;
+				currentYear ++;
+			}
+			date = Date(currentDay,currentMonth, currentYear);
+		}
+	} else {
+		nbDays = -1;
+	}
 	return nbDays;
 }
