@@ -7,6 +7,7 @@
 //
 
 #include "chambre.h"
+#include "iostream"
 
 Chambre::Chambre(int id, type_chambre type, double prix)  {
     this->m_id = id;
@@ -32,4 +33,8 @@ void Chambre::modifierChambre(int id, type_chambre type, double prix) {
     this->m_id = id;
     this->m_type = type;
     this->m_prix = prix;
+}
+
+void Chambre::afficherInfos() {
+    std::cout << "Chambre n°"<< m_id << " : " << m_type << ", au prix de " << m_prix << "$" << std::endl;
 }

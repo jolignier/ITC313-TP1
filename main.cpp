@@ -6,38 +6,50 @@
 //
 //
 
-#include <iostream>
-#include <string>
 #include "chambre.h"
 #include "reservation.h"
 #include "date.hpp"
 #include "client.hpp"
 #include "hotel.hpp"
 
+#include <iostream>
+#include <string>
+#include <array>
+
+
 using namespace std;
 
 int main() {
 
-    Chambre c1(2, SIMPLE, 10);
+    // Création des chambres
+    array<Chambre, 10> chambres;
 
-    vector<Chambre> chambres;
-    chambres.push_back(c1);
-    Hotel h1(15, "La Cloche", "Dijon", chambres);
+    Chambre c1(1, SINGLE, 100);
+    Chambre c2(2, SINGLE, 100);
+    Chambre c3(3, SINGLE, 100);
 
-    Date deb(25,12,2019);
-    Date fin(03,03,2020);
+    Chambre c4(4, DOUBLE, 125);
+    Chambre c5(5, DOUBLE, 125);
+    Chambre c6(6, DOUBLE, 125);
+    Chambre c7(7, DOUBLE, 125);
+    Chambre c8(8, DOUBLE, 125);
 
-    Client jeanpierre(27,"Jean-Pierre", "Polnaref" );
+    Chambre c9(9, SUITE, 210);
+    Chambre c10(10, SUITE, 210);
 
-    Reservation r1(1, deb, fin, 15 ,2, 27);
+    // Remplissage du tableau de chambres
+    chambres.fill(c1);
+    chambres.fill(c2);
+    chambres.fill(c3);
+    chambres.fill(c4);
+    chambres.fill(c5);
+    chambres.fill(c6);
+    chambres.fill(c7);
+    chambres.fill(c8);
+    chambres.fill(c9);
+    chambres.fill(c10);
 
-    r1.calculMontant(c1, 0);
 
-    cout << "Jean pierre va payer : " << r1.getMontantTotal() << endl;
-
-    r1.calculMontant(c1, 15);
-
-    cout << "Jean pierre le client fidèle va payer : " << r1.getMontantTotal() << endl;
 
     return 0;
 }

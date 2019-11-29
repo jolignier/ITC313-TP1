@@ -26,6 +26,7 @@ class Chambre {
         type_chambre getType();
         double getPrix();
         void modifierChambre(int id, type_chambre type, double prix);
+        void afficherInfos();
     protected:
 
 };
