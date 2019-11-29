@@ -20,7 +20,7 @@ private:
     int m_fidelity;
 
 public:
-    Client(int id, std::string surname, std::string name, int fidelity);
+    Client(int id, std::string surname, std::string name);
 
     int getID() const;
     std::string getSurname() const;
@@ -31,7 +31,7 @@ public:
     void setName(std::string);
     void setFidelity(int);
 
-    int newFidelity();
+    void addFidelity();
 };
 
 

@@ -25,7 +25,7 @@ class Reservation {
         double m_montantTotal;
 
     public:
-        Reservation(int id, Date dateDeb, Date dateFin, int idHotel, int idChambre, int idClient, double montantTotal);
+        Reservation(int id, Date dateDeb, Date dateFin, int idHotel, int idChambre, int idClient);
 
         int getId();
         Date getDateDeb();
@@ -37,7 +37,7 @@ class Reservation {
         double getMontantTotal();
         void setDates(Date d1, Date d2);
         void setNumeroChambre(int num);
-        double calculMontant(Chambre c, double reduction);
+        void calculMontant(Chambre c, double reduction);
 
     protected:
 

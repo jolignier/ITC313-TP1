@@ -8,10 +8,9 @@
 
 #include "client.hpp"
 
-Client::Client(int id, std::string surname, std::string name, int fidelity) : m_unique_id(id) {
+Client::Client(int id, std::string surname, std::string name) : m_unique_id(id) {
   this->m_surname = surname;
   this->m_name = name;
-  this->m_fidelity = fidelity;
 }
 
 int Client::getID() const {
@@ -37,8 +36,6 @@ void Client::setFidelity(int fidelity) {
   this->m_fidelity = fidelity;
 }
 
-
-int Client::newFidelity() {
+void Client::addFidelity() {
   this->m_fidelity++;
-  return this->m_fidelity;
 }

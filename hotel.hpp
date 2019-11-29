@@ -16,20 +16,20 @@
 class Hotel {
 private:
 
-    std::string m_unique_id;
+    int m_unique_id;
     std::string m_name;
     std::string m_city;
     std::vector<Chambre> m_liste_chambre;
 
 public:
-    Hotel(std::string, std::string, std::string, std::vector<Chambre>);
+    Hotel(int, std::string, std::string, std::vector<Chambre>);
 
-    std::string getID() const;
+    int getID() const;
     std::string getName() const;
     std::string getCity() const;
     std::vector<Chambre> getListeChambre() const;
 
-    void setID(std::string);
+    void setID(int);
     void setName(std::string);
     void setCity(std::string);
     void setListeChambre(std::vector<Chambre>);

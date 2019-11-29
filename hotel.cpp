@@ -10,14 +10,14 @@
 #include "chambre.h"
 
 
-Hotel::Hotel(std::string id, std::string name, std::string city, std::vector<Chambre> chambres)  {
+Hotel::Hotel(int id, std::string name, std::string city, std::vector<Chambre> chambres)  {
   this->m_unique_id = id;
   this->m_name = name;
   this->m_city = city;
   this->m_liste_chambre = chambres;
 }
 
-std::string Hotel::getID() const {
+int Hotel::getID() const {
   return m_unique_id;
 }
 std::string Hotel::getName() const {
@@ -30,7 +30,7 @@ std::vector<Chambre> Hotel::getListeChambre() const {
   return m_liste_chambre;
 }
 
-void Hotel::setID(std::string uniqueID) {
+void Hotel::setID(int uniqueID) {
   this->m_unique_id = uniqueID;
 }
 void Hotel::setName(std::string name){

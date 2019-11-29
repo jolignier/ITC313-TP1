@@ -8,14 +8,13 @@
 
 #include "reservation.h"
 
-Reservation::Reservation(int id, Date dateDeb, Date dateFin, int idHotel, int idChambre, int idClient, double montantTotal)  {
+Reservation::Reservation(int id, Date dateDeb, Date dateFin, int idHotel, int idChambre, int idClient)  {
     this->m_id = id;
     this->m_dateDeb = dateDeb;
     this->m_dateFin = dateFin;
     this->m_idHotel = idHotel;
     this->m_idChambre = idChambre;
     this->m_idClient = idClient;
-    this->m_montantTotal = montantTotal;
 
 }
 int Reservation::getId() {
@@ -54,9 +53,9 @@ void Reservation::setDates(Date dateDeb, Date dateFin) {
 void Reservation::setNumeroChambre(int num) {
     this->m_idChambre = num;
 }
-// La réduction est un pourcentage entre 0 et 1
-double Reservation::calculMontant(Chambre c, double reduction) {
+// La réduction est un pourcentage entre 0 et 100
+void Reservation::calculMontant(Chambre c, double reduction) {
     int nbNuits = m_dateDeb.getNbDays(m_dateFin);
     double prix = nbNuits * c.getPrix();
-    this->m_montantTotal = prix - reduction*prix ;
+    this->m_montantTotal = prix - reduction*prix/100.0 ;
 }
